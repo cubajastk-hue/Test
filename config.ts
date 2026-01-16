@@ -2,8 +2,8 @@ import { defineConfig } from "tinacms";
 
 export default defineConfig({
   branch: "main",
-  clientId: null, // Získáš později na tina.io
-  token: null,    // Získáš později na tina.io
+  clientId: process.env.TINA_PUBLIC_CLIENT_ID, // Získáš později na tina.io
+  token: process.env.TINA_TOKEN,    // Získáš později na tina.io
   build: {
     outputFolder: "admin",
     publicFolder: "./",
@@ -29,4 +29,5 @@ export default defineConfig({
       },
     ],
   },
+
 });
