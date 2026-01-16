@@ -2,8 +2,8 @@ import { defineConfig } from "tinacms";
 
 export default defineConfig({
   branch: "main",
-  clientId: process.env.TINA_PUBLIC_CLIENT_ID, // NESMÍ tu být to ID natvrdo
-  token: process.env.TINA_TOKEN,               // NESMÍ tu být ten token natvrdo
+  clientId: process.env.TINA_PUBLIC_CLIENT_ID, 
+  token: process.env.TINA_TOKEN,               
   build: {
     outputFolder: "admin",
     publicFolder: "./",
@@ -23,7 +23,12 @@ export default defineConfig({
         format: "json",
         fields: [
           { type: "string", name: "title", label: "Nadpis webu" },
-          { type: "string", name: "description", label: "Popis podniku", ui: { component: "textarea" } },
+          {
+            type: "string",
+            name: "description",
+            label: "Popis podniku",
+            ui: { component: "textarea" },
+          },
           { type: "image", name: "image", label: "Hlavní obrázek" },
         ],
       },
