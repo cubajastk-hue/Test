@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Můj Profi Podnik</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px; background: #f4f4f4; }
+        .card { background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        h1 { color: #333; }
+        img { max-width: 100%; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1 id="title">Načítání...</h1>
+        <div id="content">Zde se objeví text z administrace.</div>
+        <div id="image-container"></div>
+    </div>
+
+    <script>
+        // Tento skript načte data, která majitel uloží v Tině
+        fetch('/content/home.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('title').innerText = data.title;
+                document.getElementById('content').innerText = data.description;
+                if(data.image) {
+                    document.getElementById('image-container').innerHTML = `<img src="${data.image}" />`;
+                }
+            })
+            .catch(err => console.error("Data zatím neexistují, nastavte je v /admin"));
+    </script>
+</body>
+</html>
