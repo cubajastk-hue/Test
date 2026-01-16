@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "tinacms dev -c \"echo 'Running dev'\"",
-    "build": "tinacms build && echo 'Build done'",
-    "start": "echo 'No start script needed'"
+    "build": "npm install --legacy-peer-deps && tinacms build",
+    "install": "npm install --legacy-peer-deps"
   },
   "dependencies": {
     "@tinacms/cli": "latest",
