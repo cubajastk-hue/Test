@@ -2,9 +2,8 @@
   "name": "muj-side-hustle",
   "version": "1.0.0",
   "scripts": {
-    "dev": "tinacms dev -c \"echo 'Running dev'\"",
-    "build": "npm install --legacy-peer-deps && tinacms build",
-    "install": "npm install --legacy-peer-deps"
+    "dev": "tinacms dev",
+    "build": "tinacms build"
   },
   "dependencies": {
     "@tinacms/cli": "latest",
